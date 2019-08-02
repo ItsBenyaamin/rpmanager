@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/go-redis/redis"
+	"os"
 )
 
 var client *redis.Client
@@ -36,5 +37,20 @@ func scanOperationFromUser() {
 	_, scanErr := fmt.Scanf("%s", &operation)
 	showErr(scanErr)
 
-	fmt.Println(operation)
+	if operation == "s" {
+
+		return
+	}else if operation == "g" {
+
+		return
+	}else if operation == "d" {
+
+	}else if operation == "all" {
+
+	}else if operation == "e" {
+		os.Exit(3)
+	}else {
+		fmt.Println("invalid value!")
+		scanOperationFromUser()
+	}
 }
