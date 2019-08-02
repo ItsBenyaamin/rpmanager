@@ -47,15 +47,15 @@ func scanOperationFromUser() {
 	showErr(scanErr)
 
 	if operation == "s" {
-
+		setOperation()
 		return
 	}else if operation == "g" {
-
+		getOperation()
 		return
 	}else if operation == "d" {
-
+		delOperation()
 	}else if operation == "all" {
-
+		allKeysOperation()
 	}else if operation == "e" {
 		os.Exit(3)
 	}else {
