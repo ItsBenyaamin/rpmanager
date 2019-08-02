@@ -29,7 +29,16 @@ func initRedisClient() {
 	showErr(err)
 }
 
-
+/**
+	scan for operation user want from commandline and decide what function
+	must called
+	list if operations:
+	  (s, Set new information),
+	  (g, Get information),
+	  (d, Delete information:),
+	  (all, get all keys),
+	  (e, Exit)
+*/
 func scanOperationFromUser() {
 	var operation string
 	fmt.Println("please enter (s, Set new information), (g, Get information), (d, Delete information:),")
