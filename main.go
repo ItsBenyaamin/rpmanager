@@ -9,11 +9,12 @@ var client *redis.Client
 
 func main(){
 	initRedisClient()
+	scanOperationFromUser()
 }
 
 
 /**
-initialize redis client for store and restore information from redis database
+	initialize redis client for store and restore information from redis database
 */
 func initRedisClient() {
 	fmt.Println("initializing database...")
@@ -25,4 +26,15 @@ func initRedisClient() {
 
 	_, err := client.Ping().Result()
 	showErr(err)
+}
+
+
+func scanOperationFromUser() {
+	var operation string
+	fmt.Println("please enter (s, Set new information), (g, Get information), (d, Delete information:),")
+	fmt.Print("	(all, get all keys), (e, Exit): ")
+	_, scanErr := fmt.Scanf("%s", &operation)
+	showErr(scanErr)
+
+	fmt.Println(operation)
 }
