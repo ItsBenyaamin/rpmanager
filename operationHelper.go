@@ -105,6 +105,7 @@ func getOperation() {
 
 	result := getKey(key)
 	if result == "" {
+		scanOperationFromUser()
 		return
 	}
 
